@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Muhammad Taifur — IT Student &amp; Developer</title>
+<title>Muhammad Taifur — IT Graduate &amp; Technical Support</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
@@ -33,7 +33,6 @@
   a{color:inherit;text-decoration:none;}
   h1,h2,h3,.disp{font-family:'Space Grotesk',sans-serif;}
 
-  /* custom cursor */
   #cursor{
     position:fixed;width:22px;height:22px;border-radius:50%;
     border:1.5px solid var(--teal);pointer-events:none;z-index:9999;
@@ -46,7 +45,6 @@
   }
   @media (max-width:880px){ #cursor,#cursorDot{display:none;} body{cursor:auto;} }
 
-  /* bg ambient */
   .noise{position:fixed;inset:0;pointer-events:none;opacity:.04;z-index:5;
     background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
   }
@@ -56,7 +54,6 @@
   .orb-2{width:420px;height:420px;background:var(--teal);bottom:-120px;right:-100px;}
   .orb-3{width:300px;height:300px;background:var(--gold);top:40%;left:60%;opacity:.12;}
 
-  /* nav */
   nav{
     position:fixed;top:0;left:0;right:0;z-index:50;
     display:flex;align-items:center;justify-content:space-between;
@@ -89,7 +86,6 @@
   }
   .eyebrow::before{content:'';width:7px;height:7px;border-radius:50%;background:var(--teal);box-shadow:0 0 10px var(--teal);}
 
-  /* HERO */
   .hero{
     min-height:100vh;display:flex;align-items:center;padding-top:0;
     position:relative;
@@ -120,7 +116,7 @@
   .btn-ghost{border:1px solid var(--line);color:var(--text);background:rgba(255,255,255,.02);}
   .btn-ghost:hover{border-color:var(--teal);transform:translateY(-3px);}
 
-  .stat-row{display:flex;gap:42px;margin-top:60px;}
+  .stat-row{display:flex;gap:42px;margin-top:60px;flex-wrap:wrap;}
   .stat b{font-size:1.8rem;font-family:'Space Grotesk';display:block;}
   .stat span{font-size:.8rem;color:var(--muted);}
 
@@ -148,12 +144,10 @@
     animation:scrollLine 1.8s ease-in-out infinite;}
   @keyframes scrollLine{0%{opacity:0;transform:scaleY(0);}50%{opacity:1;transform:scaleY(1);}100%{opacity:0;transform:scaleY(0);}}
 
-  /* SECTION HEAD */
   .sec-head{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;margin-bottom:60px;flex-wrap:wrap;}
   .sec-head h2{font-size:clamp(2rem,3.6vw,2.8rem);font-weight:700;letter-spacing:-1px;}
   .sec-head p{color:var(--muted);max-width:380px;font-size:.95rem;}
 
-  /* ABOUT */
   .about-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:60px;}
   .about-grid p{color:var(--muted);line-height:1.85;font-size:1.02rem;margin-bottom:18px;}
   .about-grid p b{color:var(--text);font-weight:600;}
@@ -176,7 +170,6 @@
   .badge-card h4{font-size:1.02rem;margin-bottom:6px;}
   .badge-card span{font-size:.82rem;color:var(--muted);}
 
-  /* SKILLS MARQUEE */
   .marquee-wrap{overflow:hidden;border-top:1px solid var(--line);border-bottom:1px solid var(--line);
     padding:26px 0;margin:0 -6%;background:var(--bg-2);}
   .marquee{display:flex;gap:50px;white-space:nowrap;animation:marquee 28s linear infinite;width:max-content;}
@@ -197,8 +190,25 @@
   @media(max-width:980px){.skill-grid{grid-template-columns:repeat(2,1fr);}}
   @media(max-width:560px){.skill-grid{grid-template-columns:1fr;}}
 
-  /* PROJECTS */
-  .proj-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+  .info-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:50px;}
+  .info-card{border:1px solid var(--line);border-radius:16px;padding:24px;background:var(--surface);}
+  .info-card h4{font-size:.78rem;letter-spacing:2px;text-transform:uppercase;color:var(--teal);margin-bottom:16px;}
+  .info-row{display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid rgba(255,255,255,.04);font-size:.9rem;}
+  .info-row:last-child{border-bottom:none;}
+  .info-row span:first-child{color:var(--text);}
+  .info-row span:last-child{color:var(--muted);font-size:.82rem;}
+  @media(max-width:980px){.info-grid{grid-template-columns:1fr;}}
+
+  .exp-card{border:1px solid var(--line);border-radius:20px;padding:32px;background:var(--surface);position:relative;}
+  .exp-top{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:10px;margin-bottom:6px;}
+  .exp-top h3{font-size:1.2rem;}
+  .exp-badge{font-size:.78rem;color:var(--teal);border:1px solid rgba(40,224,200,.3);padding:5px 12px;border-radius:8px;background:rgba(40,224,200,.05);white-space:nowrap;}
+  .exp-role{color:var(--muted);font-style:italic;font-size:.92rem;margin-bottom:18px;}
+  .exp-list{list-style:none;display:flex;flex-direction:column;gap:10px;}
+  .exp-list li{color:var(--muted);font-size:.92rem;padding-left:22px;position:relative;line-height:1.6;}
+  .exp-list li::before{content:'';position:absolute;left:0;top:8px;width:7px;height:7px;border-radius:50%;background:var(--grad);}
+
+  .proj-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;}
   .proj-card{
     border:1px solid var(--line);border-radius:20px;padding:30px 26px;background:var(--surface);
     position:relative;overflow:hidden;transition:transform .15s ease-out, border-color .3s;
@@ -218,13 +228,12 @@
   .proj-card:hover .proj-arrow{background:var(--grad);border-color:transparent;transform:rotate(45deg);color:#06070d;}
   .proj-ic{font-size:2rem;margin-bottom:16px;display:block;}
   .proj-card h3{font-size:1.18rem;margin-bottom:10px;}
-  .proj-card p{font-size:.88rem;color:var(--muted);line-height:1.6;margin-bottom:20px;}
+  .proj-card p{font-size:.88rem;color:var(--muted);line-height:1.6;margin-bottom:14px;}
+  .proj-link{font-size:.82rem;color:var(--teal);word-break:break-all;display:block;margin-bottom:16px;}
   .tag-row{display:flex;gap:8px;flex-wrap:wrap;}
   .tag{font-size:.74rem;color:var(--teal);border:1px solid rgba(40,224,200,.3);padding:5px 11px;border-radius:8px;background:rgba(40,224,200,.05);}
-  @media(max-width:980px){.proj-grid{grid-template-columns:repeat(2,1fr);}}
-  @media(max-width:640px){.proj-grid{grid-template-columns:1fr;}}
+  @media(max-width:780px){.proj-grid{grid-template-columns:1fr;}}
 
-  /* CONTACT */
   .contact-wrap{
     border-radius:28px;background:linear-gradient(160deg, var(--surface) 0%, var(--bg-2) 100%);
     border:1px solid var(--line);padding:80px 6%;position:relative;overflow:hidden;text-align:center;
@@ -270,6 +279,7 @@
     <a href="#home">Home</a>
     <a href="#about">About</a>
     <a href="#skills">Skills</a>
+    <a href="#experience">Experience</a>
     <a href="#projects">Projects</a>
     <a href="#contact">Contact</a>
   </div>
@@ -280,25 +290,25 @@
 <section class="hero" id="home">
   <div class="hero-grid">
     <div>
-      <div class="hero-tag">Portfolio · 2026</div>
+      <div class="hero-tag">Sulaymaniyah, Iraq · 2026</div>
       <h1>Muhammad<br><span class="grad-text">Taifur</span></h1>
-      <p class="lead">IT student &amp; developer, 22 years old. I build websites, apps and games with Godot Engine — and explore IoT, solving complex problems with elegant, working solutions.</p>
+      <p class="lead">Information Technology graduate with strong knowledge in software maintenance, web development, application development and digital technologies. Skilled in using AI tools to improve productivity, experienced with Microsoft Office, social media management, and basic networking — eager to learn, grow and contribute to innovative projects.</p>
       <div class="btn-row">
         <a href="#projects" class="btn btn-primary">View Projects →</a>
         <a href="#contact" class="btn btn-ghost">Contact Me</a>
       </div>
       <div class="stat-row">
-        <div class="stat"><b>4+</b><span>Skills</span></div>
-        <div class="stat"><b>6+</b><span>Projects</span></div>
-        <div class="stat"><b>L3</b><span>English</span></div>
+        <div class="stat"><b>4+</b><span>GitHub Projects</span></div>
+        <div class="stat"><b>100h</b><span>IT Internship</span></div>
+        <div class="stat"><b>3</b><span>Languages</span></div>
         <div class="stat"><b>Open</b><span>For work</span></div>
       </div>
     </div>
     <div class="hero-3d">
       <canvas id="heroCanvas"></canvas>
       <div class="orbit-badge b1"><span class="dot"></span> Available for work</div>
-      <div class="orbit-badge b2"><span class="dot"></span> Godot Engine</div>
-      <div class="orbit-badge b3"><span class="dot"></span> IoT &amp; Hardware</div>
+      <div class="orbit-badge b2"><span class="dot"></span> Web &amp; App Dev</div>
+      <div class="orbit-badge b3"><span class="dot"></span> IT Support</div>
     </div>
   </div>
   <div class="scroll-cue"><div class="line"></div>Scroll</div>
@@ -310,33 +320,39 @@
       <div class="eyebrow">01 — About</div>
       <h2>About Me</h2>
     </div>
-    <p>Building things that live on the web, inside computers, and in the physical world.</p>
+    <p>Bachelor's in Information Technology, focused on practical, working solutions.</p>
   </div>
   <div class="about-grid">
-    
+    <div>
+      <p><b>Professional Summary —</b> Information Technology graduate with strong knowledge in software maintenance, web development, application development and digital technologies. Skilled in using Artificial Intelligence tools to improve productivity and software development.</p>
+      <p>Experienced in Microsoft Office applications, social media management, and basic networking. Eager to learn, grow, and contribute to innovative projects.</p>
+      <div class="chip-list">
         <div class="chip">Website Development</div>
         <div class="chip">Application Development</div>
-        <div class="chip">Game Dev — Godot Engine</div>
-        <div class="chip">Internet of Things (IoT)</div>
-        <div class="chip">Software Troubleshooting</div>
-        <div class="chip">Windows Installation &amp; Activation</div>
+        <div class="chip">HTML / CSS / Java / C#</div>
+        <div class="chip">Flutter &amp; Dart</div>
+        <div class="chip">Basic Networking</div>
+        <div class="chip">Microsoft Office</div>
+        <div class="chip">Adobe Photoshop (Basic)</div>
+        <div class="chip">AI Tools &amp; Prompt Engineering</div>
+        <div class="chip">Social Media Management</div>
       </div>
     </div>
     <div class="badge-stack reveal">
       <div class="badge-card">
-        <span class="ic">🏅</span>
-        <h4>English Language Certificate</h4>
-        <span>Level 3 — International Proficiency</span>
-      </div>
-      <div class="badge-card">
         <span class="ic">🎓</span>
-        <h4>IT Student</h4>
-        <span>Active learner · Technology &amp; Software Development</span>
+        <h4>Bachelor's Degree — Information Technology</h4>
+        <span>Information Technology Department</span>
       </div>
       <div class="badge-card">
-        <span class="ic">⚡</span>
-        <h4>Self-Driven Developer</h4>
-        <span>Building real projects from scratch · 2022 – Present</span>
+        <span class="ic">🏅</span>
+        <h4>Certifications</h4>
+        <span>Computer Software Maintenance · Information Technology (IT)</span>
+      </div>
+      <div class="badge-card">
+        <span class="ic">🌍</span>
+        <h4>Languages</h4>
+        <span>Kurdish — Native · Arabic — Good · English — Good</span>
       </div>
     </div>
   </div>
@@ -344,114 +360,150 @@
 
 <div class="marquee-wrap">
   <div class="marquee">
-    <span>◆ <b>HTML / CSS / JS</b> <i>Website Design</i> ◆ <b>App Development</b> <i>Game Dev (Godot)</i> ◆ <b>IoT Projects</b> <i>Computer Maintenance</i> ◆ <b>Windows Setup</b> <i>Problem Solving</i></span>
-    <span>◆ <b>HTML / CSS / JS</b> <i>Website Design</i> ◆ <b>App Development</b> <i>Game Dev (Godot)</i> ◆ <b>IoT Projects</b> <i>Computer Maintenance</i> ◆ <b>Windows Setup</b> <i>Problem Solving</i></span>
+    <span>◆ <b>HTML / CSS / Java / C#</b> <i>Web &amp; App Dev</i> ◆ <b>Flutter / Dart</b> <i>Mobile</i> ◆ <b>AI Tools</b> <i>Prompt Engineering</i> ◆ <b>Networking</b> <i>IT Support</i></span>
+    <span>◆ <b>HTML / CSS / Java / C#</b> <i>Web &amp; App Dev</i> ◆ <b>Flutter / Dart</b> <i>Mobile</i> ◆ <b>AI Tools</b> <i>Prompt Engineering</i> ◆ <b>Networking</b> <i>IT Support</i></span>
   </div>
 </div>
 
 <section id="skills">
   <div class="sec-head reveal">
     <div>
-      <div class="eyebrow">02 — Stack</div>
-      <h2>What I Work With</h2>
+      <div class="eyebrow">02 — Skills</div>
+      <h2>Technical Skills</h2>
     </div>
-    <p>The tools and disciplines I reach for, from pixels to circuit boards.</p>
+    <p>Tools and disciplines from coding to support and design.</p>
   </div>
   <div class="skill-grid">
-    <div class="skill-card reveal"><span class="ic">🌐</span><h4>HTML / CSS / JS</h4><p>Responsive, modern websites with clean markup and interactive effects.</p></div>
-    <div class="skill-card reveal"><span class="ic">📱</span><h4>App Development</h4><p>Useful apps designed with clean UX and strong performance.</p></div>
-    <div class="skill-card reveal"><span class="ic">🎮</span><h4>Godot Engine</h4><p>2D &amp; 3D game projects built with GDScript and the Godot Engine.</p></div>
-    <div class="skill-card reveal"><span class="ic">🔌</span><h4>IoT Projects</h4><p>Connected hardware experiments and smart device prototypes.</p></div>
-    <div class="skill-card reveal"><span class="ic">🖥️</span><h4>Computer Maintenance</h4><p>Diagnosing and resolving hardware &amp; software issues efficiently.</p></div>
-    <div class="skill-card reveal"><span class="ic">🪟</span><h4>Windows Setup</h4><p>Clean OS installation, activation, and system optimization.</p></div>
-    <div class="skill-card reveal"><span class="ic">🎨</span><h4>UI / UX Design</h4><p>Crafting visually appealing interfaces with a focus on user experience.</p></div>
-    <div class="skill-card reveal"><span class="ic">🧩</span><h4>Problem Solving</h4><p>Breaking down complex problems into clear, actionable solutions.</p></div>
+    <div class="skill-card reveal"><span class="ic">🌐</span><h4>HTML / CSS</h4><p>Basic level — building and structuring web pages.</p></div>
+    <div class="skill-card reveal"><span class="ic">☕</span><h4>Java</h4><p>Basic level — core programming fundamentals.</p></div>
+    <div class="skill-card reveal"><span class="ic">🔷</span><h4>C#</h4><p>Basic level — object-oriented programming.</p></div>
+    <div class="skill-card reveal"><span class="ic">📱</span><h4>Flutter / Dart</h4><p>Basic level — cross-platform app development.</p></div>
+    <div class="skill-card reveal"><span class="ic">⚙️</span><h4>Web &amp; App Development</h4><p>Building websites and applications end to end.</p></div>
+    <div class="skill-card reveal"><span class="ic">📊</span><h4>Microsoft Office</h4><p>Word, Excel and PowerPoint for everyday productivity.</p></div>
+    <div class="skill-card reveal"><span class="ic">🎨</span><h4>Adobe Photoshop &amp; Apps</h4><p>Basic level — image editing and creative tools.</p></div>
+    <div class="skill-card reveal"><span class="ic">🔌</span><h4>Basic Networking</h4><p>Foundational networking concepts and troubleshooting.</p></div>
+    <div class="skill-card reveal"><span class="ic">🤖</span><h4>AI Tools &amp; Prompt Engineering</h4><p>Using AI tools to boost productivity and development speed.</p></div>
+    <div class="skill-card reveal"><span class="ic">📣</span><h4>Social Media Management</h4><p>Managing pages and content across platforms.</p></div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="sec-head reveal">
+    <div>
+      <div class="eyebrow">03 — Experience</div>
+      <h2>Work Experience</h2>
+    </div>
+    <p>Hands-on IT support experience from a real internship.</p>
+  </div>
+  <div class="exp-card reveal">
+    <div class="exp-top">
+      <h3>Muslim Company</h3>
+      <span class="exp-badge">100 Hours · Internship</span>
+    </div>
+    <div class="exp-role">IT Trainee / Technical Support</div>
+    <ul class="exp-list">
+      <li>Provided technical support and troubleshooting.</li>
+      <li>Assisted in solving software and hardware issues.</li>
+      <li>Gained practical experience in IT operations and support.</li>
+    </ul>
+  </div>
+  <div class="info-grid">
+    <div class="info-card reveal">
+      <h4>Key Strengths</h4>
+      <div class="info-row"><span>Effective use of AI tools</span></div>
+      <div class="info-row"><span>Web &amp; app development</span></div>
+      <div class="info-row"><span>Microsoft Office expertise</span></div>
+      <div class="info-row"><span>Problem solving &amp; fast learner</span></div>
+      <div class="info-row"><span>Communication &amp; teamwork</span></div>
+    </div>
+    <div class="info-card reveal">
+      <h4>Languages</h4>
+      <div class="info-row"><span>Kurdish</span><span>Native</span></div>
+      <div class="info-row"><span>Arabic</span><span>Good</span></div>
+      <div class="info-row"><span>English</span><span>Good</span></div>
+    </div>
+    <div class="info-card reveal">
+      <h4>Additional Info</h4>
+      <div class="info-row"><span>Strong ability to learn &amp; adapt fast</span></div>
+      <div class="info-row"><span>Passionate about technology</span></div>
+      <div class="info-row"><span>Good communication &amp; teamwork</span></div>
+      <div class="info-row"><span>Ready to grow professionally</span></div>
+    </div>
   </div>
 </section>
 
 <section id="projects">
   <div class="sec-head reveal">
     <div>
-      <div class="eyebrow">03 — Work</div>
-      <h2>Things I Build</h2>
+      <div class="eyebrow">04 — Portfolio</div>
+      <h2>Projects on GitHub</h2>
     </div>
-    <p>A spread of web, app, game and hardware projects — built end to end.</p>
+    <p>Real, working projects — built and published end to end.</p>
   </div>
   <div class="proj-grid">
     <div class="proj-card reveal" data-tilt>
       <div class="glare"></div>
-      <div class="proj-top"><span class="proj-num">01</span><span class="proj-arrow">↗</span></div>
+      <div class="proj-top"><span class="proj-num">01</span><a class="proj-arrow" href="https://github.com/hamaxamzay91/mywebtranslate" target="_blank">↗</a></div>
       <span class="proj-ic">🌐</span>
-      <h3>Web Development</h3>
-      <p>Responsive modern websites built with HTML, CSS and JavaScript. From landing pages to full web apps with smooth animations.</p>
-      <div class="tag-row"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JS</span></div>
+      <h3>mywebtranslate</h3>
+      <p>Web translation application.</p>
+      <span class="proj-link">github.com/hamaxamzay91/mywebtranslate</span>
+      <div class="tag-row"><span class="tag">Web</span><span class="tag">Translation</span></div>
     </div>
     <div class="proj-card reveal" data-tilt>
       <div class="glare"></div>
-      <div class="proj-top"><span class="proj-num">02</span><span class="proj-arrow">↗</span></div>
-      <span class="proj-ic">⚙️</span>
-      <h3>Applications</h3>
-      <p>Useful apps designed with a focus on clean UX and performance, built for real-world use cases and everyday users.</p>
-      <div class="tag-row"><span class="tag">App Dev</span></div>
+      <div class="proj-top"><span class="proj-num">02</span><a class="proj-arrow" href="https://github.com/hamaxamzay91/taifur-tech-hub" target="_blank">↗</a></div>
+      <span class="proj-ic">💻</span>
+      <h3>taifur-tech-hub</h3>
+      <p>Tech hub website.</p>
+      <span class="proj-link">github.com/hamaxamzay91/taifur-tech-hub</span>
+      <div class="tag-row"><span class="tag">Website</span></div>
     </div>
     <div class="proj-card reveal" data-tilt>
       <div class="glare"></div>
-      <div class="proj-top"><span class="proj-num">03</span><span class="proj-arrow">↗</span></div>
-      <span class="proj-ic">🎮</span>
-      <h3>Godot Games</h3>
-      <p>2D &amp; 3D game projects built using the Godot Engine with GDScript, featuring custom mechanics and polished visuals.</p>
-      <div class="tag-row"><span class="tag">Godot</span><span class="tag">GDScript</span></div>
+      <div class="proj-top"><span class="proj-num">03</span><a class="proj-arrow" href="https://github.com/hamaxamzay91/kurdi-translate-byhamaxamzay" target="_blank">↗</a></div>
+      <span class="proj-ic">🗣️</span>
+      <h3>kurdi-translate-byhamaxamzay</h3>
+      <p>Kurdish translation project.</p>
+      <span class="proj-link">github.com/hamaxamzay91/kurdi-translate-byhamaxamzay</span>
+      <div class="tag-row"><span class="tag">Kurdish</span><span class="tag">Translation</span></div>
     </div>
     <div class="proj-card reveal" data-tilt>
       <div class="glare"></div>
-      <div class="proj-top"><span class="proj-num">04</span><span class="proj-arrow">↗</span></div>
-      <span class="proj-ic">🔌</span>
-      <h3>IoT Projects</h3>
-      <p>Connected hardware experiments and smart device prototypes, bridging the gap between software and the physical world.</p>
-      <div class="tag-row"><span class="tag">IoT</span><span class="tag">Hardware</span></div>
-    </div>
-    <div class="proj-card reveal" data-tilt>
-      <div class="glare"></div>
-      <div class="proj-top"><span class="proj-num">05</span><span class="proj-arrow">↗</span></div>
-      <span class="proj-ic">🛠️</span>
-      <h3>PC Troubleshooting</h3>
-      <p>Diagnosing and fixing software issues on Windows systems — fast, reliable, and thorough, from boot errors to driver conflicts.</p>
-      <div class="tag-row"><span class="tag">Support</span><span class="tag">Repair</span></div>
-    </div>
-    <div class="proj-card reveal" data-tilt>
-      <div class="glare"></div>
-      <div class="proj-top"><span class="proj-num">06</span><span class="proj-arrow">↗</span></div>
-      <span class="proj-ic">🪟</span>
-      <h3>Windows Setup</h3>
-      <p>Clean Windows installation, activation and optimization for peak performance — tailored for home and professional environments.</p>
-      <div class="tag-row"><span class="tag">Windows</span><span class="tag">Setup</span></div>
+      <div class="proj-top"><span class="proj-num">04</span><a class="proj-arrow" href="https://hamaxamzay91.github.io/myweb" target="_blank">↗</a></div>
+      <span class="proj-ic">🪞</span>
+      <h3>myweb</h3>
+      <p>Personal website project — built by me.</p>
+      <span class="proj-link">hamaxamzay91.github.io/myweb</span>
+      <div class="tag-row"><span class="tag">Portfolio</span></div>
     </div>
   </div>
 </section>
 
 <section id="contact">
   <div class="contact-wrap reveal">
-    <div class="eyebrow" style="justify-content:center;display:inline-flex;">04 — Get in touch</div>
+    <div class="eyebrow" style="justify-content:center;display:inline-flex;">05 — Get in touch</div>
     <h2>Let's Work <span class="grad-text">Together</span></h2>
-    <p>Reach out on any of these platforms — I usually reply quickly. Always open to new projects, collaborations, and interesting ideas.</p>
+    <p>Based in Sulaymaniyah, Iraq. Always open to new projects, collaborations, and interesting ideas.</p>
     <div class="contact-links">
-      <a class="clink" href="https://t.me/hamaxamzay99" target="_blank">✈️ Telegram — @hamaxamzay99 <span class="arrow">→</span></a>
+      <a class="clink" href="tel:07703530155">📞 Phone — 07703530155 <span class="arrow">→</span></a>
+      <a class="clink" href="mailto:hamatafur77@gmail.com">📧 Email — hamatafur77@gmail.com <span class="arrow">→</span></a>
       <a class="clink" href="https://wa.me/9647703530155" target="_blank">💬 WhatsApp — +964 770 353 0155 <span class="arrow">→</span></a>
+      <a class="clink" href="https://t.me/hamaxamzay99" target="_blank">✈️ Telegram — @hamaxamzay99 <span class="arrow">→</span></a>
       <a class="clink" href="https://facebook.com/mhamad.taifur.16" target="_blank">📘 Facebook — mhamad.taifur.16 <span class="arrow">→</span></a>
       <a class="clink" href="https://instagram.com/lala_muhammad.99" target="_blank">📸 Instagram — lala_muhammad.99 <span class="arrow">→</span></a>
-      <a class="clink" href="mailto:hamataifur77@gmail.com">📧 Email — hamataifur77@gmail.com <span class="arrow">→</span></a>
+      <a class="clink" href="https://hamaxamzay91.github.io/myweb" target="_blank">🌐 Website — hamaxamzay91.github.io/myweb <span class="arrow">→</span></a>
     </div>
   </div>
 </section>
 
 <footer>
   <span>© 2026 Muhammad Taifur. Built with passion &amp; precision.</span>
-  <span>v3.0 — 3D Edition</span>
+  <span>v4.0 — CV Edition</span>
 </footer>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.128.0/three.min.js"></script>
 <script>
-// cursor
 const cursor=document.getElementById('cursor'),dot=document.getElementById('cursorDot');
 window.addEventListener('mousemove',e=>{
   cursor.style.left=e.clientX+'px';cursor.style.top=e.clientY+'px';
@@ -462,14 +514,12 @@ document.querySelectorAll('a,button,.proj-card,.skill-card,.chip').forEach(el=>{
   el.addEventListener('mouseleave',()=>{cursor.style.width='22px';cursor.style.height='22px';cursor.style.borderColor='#28e0c8';});
 });
 
-// reveal on scroll
 const reveals=document.querySelectorAll('.reveal');
 const io=new IntersectionObserver(entries=>{
   entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); } });
 },{threshold:0.15});
 reveals.forEach(r=>io.observe(r));
 
-// project card tilt + glare
 document.querySelectorAll('[data-tilt]').forEach(card=>{
   card.addEventListener('mousemove',e=>{
     const r=card.getBoundingClientRect();
@@ -483,7 +533,6 @@ document.querySelectorAll('[data-tilt]').forEach(card=>{
   card.addEventListener('mouseleave',()=>{ card.style.transform='perspective(700px) rotateX(0) rotateY(0)'; });
 });
 
-// burger -> jump to contact on mobile menu tap (simple fallback)
 document.getElementById('burger').addEventListener('click',()=>{
   document.querySelector('.nav-links').style.display='flex';
   document.querySelector('.nav-links').style.flexDirection='column';
@@ -497,7 +546,6 @@ document.getElementById('burger').addEventListener('click',()=>{
   document.querySelector('.nav-links').style.gap='18px';
 });
 
-// THREE.js hero — wireframe icosphere with glowing core + floating particles
 let scene,camera,renderer,core,wire,particles;
 function initHero(){
   const canvas=document.getElementById('heroCanvas');
